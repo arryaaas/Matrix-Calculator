@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragment.ResultFragment">
+
+    <GridView
+        android:id="@+id/grid_view_matrix_result"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:stretchMode="columnWidth"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:visibility="visible"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv_result"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:gravity="center"
+            android:visibility="gone"/>
+        <EditText
+            android:id="@+id/et_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:gravity="center"
+            android:scrollHorizontally="true"
+            android:singleLine="true"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_clear"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:text="@string/clear"
+        android:background="@drawable/bg_btn"
+        android:textColor="@color/colorAccent"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_result"
+        app:layout_constraintEnd_toStartOf="@+id/btn_calculate"/>
+
+    <Button
+        android:id="@+id/btn_calculate"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:background="@drawable/bg_btn"
+        android:textColor="@color/colorAccent"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_result"
+        app:layout_constraintStart_toEndOf="@id/btn_clear"/>
+
+    <Button
+        android:id="@+id/btn_result"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:text="Result"
+        android:background="@drawable/bg_btn"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintStart_toStartOf="@id/btn_clear"
+        app:layout_constraintEnd_toEndOf="@id/btn_calculate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="20dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
