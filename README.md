@@ -1,8 +1,6 @@
 # Matrix-Calculator
 
-Some facts about this project:
-
-- Completely written in Kotlin
+This project is inspired by the [Matrix-Calculator-GUI](https://github.com/arryaaas/Matrix-Calculator-GUI) that I built previously using python. In Matrix Calculator you can calculate the matrix easily at anytime and anywhere.
 
 ## Preview App
 
