@@ -1,6 +1,6 @@
 package com.arya.matrixcalculator.logic
 
-object InversOperation {
+object InverseOperation {
     //    const val N = 3
     // Function to get cofactor of A[p][q] in temp[][]. n is current
     // dimension of A[][]

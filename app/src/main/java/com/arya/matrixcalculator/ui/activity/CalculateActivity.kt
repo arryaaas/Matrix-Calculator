@@ -53,7 +53,7 @@ class CalculateActivity : AppCompatActivity() {
             sectionsPagerAdapter.addFragment(MatrixAFragment(), "Matrix A")
             sectionsPagerAdapter.addFragment(MatrixBFragment(), "Matrix B")
             sectionsPagerAdapter.addFragment(ResultFragment(), "Result")
-        } else if (type == "Determinant" || type == "Trace" || type == "Invers" || type == "Transpose") {
+        } else if (type == "Determinant" || type == "Trace" || type == "Inverse" || type == "Transpose") {
             sectionsPagerAdapter.addFragment(MatrixAFragment(), "Matrix A")
             sectionsPagerAdapter.addFragment(ResultFragment(), "Result")
         } else {

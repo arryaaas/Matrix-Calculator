@@ -11,7 +11,7 @@ import android.widget.GridView
 import android.widget.Toast
 import com.arya.matrixcalculator.R
 import com.arya.matrixcalculator.adapter.GridViewAdapter
-import com.arya.matrixcalculator.logic.InversOperation
+import com.arya.matrixcalculator.logic.InverseOperation
 import com.arya.matrixcalculator.logic.MatrixOperation
 import com.arya.matrixcalculator.ui.activity.CalculateActivity
 import kotlinx.android.synthetic.main.fragment_result.*
@@ -53,7 +53,7 @@ class ResultFragment : Fragment() {
 
         val message1 = if (type == "Add" || type == "Subtract" || type == "Multiply") {
             "Matrix A and Matrix B must be complete"
-        } else if (type == "Determinant" || type == "Trace" || type == "Invers" || type == "Transpose") {
+        } else if (type == "Determinant" || type == "Trace" || type == "Inverse" || type == "Transpose") {
             "Matrix A must be complete"
         } else {
             "Matrix A and Scalar K must be complete"
@@ -63,7 +63,7 @@ class ResultFragment : Fragment() {
             "The size of both matrix must be same"
         } else if (type == "Multiply") {
             "Size of column Matrix A and row Matrix B must be same"
-        } else if (type == "Determinant" || type == "Trace" || type == "Invers") {
+        } else if (type == "Determinant" || type == "Trace" || type == "Inverse") {
             "Matrix A must be square"
         } else {
             "" // for transpose and scalar multipy
@@ -103,7 +103,7 @@ class ResultFragment : Fragment() {
 
             val condition1 = if (type == "Add" || type == "Subtract" || type == "Multiply") {
                 (!isMatrixAEmpty && !isMatrixBEmpty)
-            } else if (type == "Determinant" || type == "Trace" || type == "Invers" || type == "Transpose") {
+            } else if (type == "Determinant" || type == "Trace" || type == "Inverse" || type == "Transpose") {
                 (!isMatrixAEmpty)
             } else {
                 (!isMatrixAEmpty && !isScalarKEmpty)
@@ -113,7 +113,7 @@ class ResultFragment : Fragment() {
                 (matrixA.size == matrixB.size && matrixA[0].size == matrixB[0].size)
             } else if (type == "Multiply") {
                 (matrixA[0].size == matrixB.size)
-            } else if (type == "Determinant" || type == "Trace" || type == "Invers") {
+            } else if (type == "Determinant" || type == "Trace" || type == "Inverse") {
                 (matrixA.size== matrixA[0].size)
             } else {
                 false // for transpose and scalar multipy
@@ -184,7 +184,7 @@ class ResultFragment : Fragment() {
                 "Multiply" -> MatrixOperation.multiply(matrixA, matrixB, matrix)
                 "Determinant" -> determinant = MatrixOperation.determinant(matrixA)
                 "Trace" -> trace = MatrixOperation.trace(matrixA)
-                "Invers" -> InversOperation.mainInverse(matrixA, matrix)
+                "Inverse" -> InverseOperation.mainInverse(matrixA, matrix)
                 "Transpose" -> MatrixOperation.transpose(matrixA, matrix)
                 "Scalar Multiply" -> MatrixOperation.scalar(matrixA, scalar, matrix)
             }
@@ -198,13 +198,13 @@ class ResultFragment : Fragment() {
     }
 
     private fun setupMatrixEntry(view: View) {
-        val rows = if (type == "Add" || type == "Subtract" || type == "Multiply" || type == "Invers" || type == "Scalar Multiply") {
+        val rows = if (type == "Add" || type == "Subtract" || type == "Multiply" || type == "Inverse" || type == "Scalar Multiply") {
             MatrixAFragment.matrix.size
         } else {
             MatrixAFragment.matrix[0].size
         }
 
-        val columns = if (type == "Add" || type == "Subtract" || type == "Invers" || type == "Scalar Multiply") {
+        val columns = if (type == "Add" || type == "Subtract" || type == "Inverse" || type == "Scalar Multiply") {
             MatrixAFragment.matrix[0].size
         } else if (type == "Multiply") {
             MatrixBFragment.matrix[0].size

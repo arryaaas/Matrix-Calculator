@@ -53,12 +53,12 @@ class MenuFragment : Fragment() {
             btn_4.setOnClickListener{ moveToCalculateActivity(resources.getString(R.string.determinant)) }
         } else {
             btn_1.text = resources.getString(R.string.trace)
-            btn_2.text = resources.getString(R.string.invers)
+            btn_2.text = resources.getString(R.string.inverse)
             btn_3.text = resources.getString(R.string.transpose)
             btn_4.text = resources.getString(R.string.scalar_multiply)
 
             btn_1.setOnClickListener{ moveToCalculateActivity(resources.getString(R.string.trace)) }
-            btn_2.setOnClickListener{ moveToCalculateActivity(resources.getString(R.string.invers)) }
+            btn_2.setOnClickListener{ moveToCalculateActivity(resources.getString(R.string.inverse)) }
             btn_3.setOnClickListener{ moveToCalculateActivity(resources.getString(R.string.transpose)) }
             btn_4.setOnClickListener{ moveToCalculateActivity(resources.getString(R.string.scalar_multiply)) }
         }
